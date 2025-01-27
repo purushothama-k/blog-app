@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function BlogForm({ blog }) {
   const [title, setTitle] = useState(blog?.title || "");
-  const [description, setDescription] = useState(blog?.content || "");
+  const [description, setDescription] = useState(blog?.description || "");
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -23,7 +23,7 @@ export default function BlogForm({ blog }) {
 
     const result = await res.json();
 
-    router.push("/");
+    router.push("/blogs");
   };
 
   return (
